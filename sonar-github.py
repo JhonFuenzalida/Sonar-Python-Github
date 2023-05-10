@@ -1,8 +1,7 @@
-#This script permits to synchronize Sonarqube projects/groups/permissions. To make it work, you need to add your sonars and github personnal token
 from github import Github
 from decouple import config
-g = Github(config('GITHUB_PERSONAL_KEY'))
 from sonarqube import SonarQubeClient
+g = Github(config('GITHUB_PERSONAL_KEY'))
 s = SonarQubeClient(sonarqube_url=config('SONARQUBE_URL'), token=config('SONARQUBE_TOKEN'))
 
 org_name = "Keiron-HealthTech"
